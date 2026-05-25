@@ -12,11 +12,11 @@ export class LoginPage {
     this.usernameInput = page.getByPlaceholder("Username");
     this.passwordInput = page.getByPlaceholder("Password");
     this.loginButton = page.getByRole("button", { name: "Login" });
-    this.errorMessage = page.getByTestId("error");
+    this.errorMessage = page.locator('[data-test="error"]');
   }
 
   async open() {
-    await this.page.goto("/");
+    await this.page.goto("https://www.saucedemo.com/");
   }
 
   async login(username: string, password: string) {
